@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8">
+    <title>嘉禾新村介紹頁</title>
+
+    <style>
+
+        body{
+            margin: 0;
+            background-color: #f5f1ea;
+            font-family: "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        /* navbar */
+
+        .navbar {
+            background-color: #863737;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-title {
+            color: white;
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        #menu-control {
+            display: none;
+        }
+
+        .hb-icon {
+            display: block;
+            width: 30px;
+            cursor: pointer;
+        }
+
+        .hb-icon span {
+            display: block;
+            height: 3px;
+            background-color: white;
+            margin: 6px 0;
+            transition: 0.3s;
+        }
+
+        .nav-list {
+            position: absolute;
+            top: 70px;
+            right: 5%;
+
+            background-color: white;
+            list-style: none;
+
+            padding: 10px 0;
+            width: 200px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+
+            display: none;
+        }
+
+        .nav-list li a {
+            display: block;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: 0.3s;
+        }
+
+        .nav-list li a:hover {
+            background-color: #f5f5f5;
+            color: #863737;
+        }
+
+        #menu-control:checked ~ .nav-list {
+            display: block;
+        }
+
+        #menu-control:checked ~ .hb-icon span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        #menu-control:checked ~ .hb-icon span:nth-child(2) {
+            opacity: 0;
+        }
+
+        #menu-control:checked ~ .hb-icon span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+        /* section */
+
+        section{
+            background-color: white;
+
+            width: 90%;
+            max-width: 1200px;
+
+            margin: 40px auto;
+            padding: 35px;
+
+            border-radius: 20px;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        h2{
+            color: #863737;
+            font-size: 2rem;
+
+            border-left: 8px solid #863737;
+            padding-left: 15px;
+        }
+
+        h3{
+            color: #863737;
+        }
+
+        /* slider */
+
+        .slider{
+            position: relative;
+            max-width: 900px;
+            margin: 30px auto;
+        }
+
+        .slides{
+            display: none;
+        }
+
+        .slides img{
+            width: 100%;
+            height: 500px;
+
+            object-fit: cover;
+
+            border-radius: 20px;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .prev,
+        .next{
+            cursor: pointer;
+
+            position: absolute;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            padding: 16px;
+
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+
+            background-color: rgba(0,0,0,0.4);
+
+            border-radius: 50%;
+
+            user-select: none;
+        }
+
+        .prev{
+            left: 20px;
+        }
+
+        .next{
+            right: 20px;
+        }
+
+        .prev:hover,
+        .next:hover{
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .fade{
+            animation: fade 0.8s;
+        }
+
+        @keyframes fade{
+            from{opacity:0.4}
+            to{opacity:1}
+        }
+
+        /* feature */
+
+        .feature-container{
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .feature-card{
+            flex: 1;
+            min-width: 250px;
+
+            background-color: #f8f4ee;
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .feature-card img{
+            width: 100%;
+            height: 220px;
+
+            object-fit: cover;
+        }
+
+        .feature-card p{
+            padding: 15px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- navbar -->
+
+    <header class="navbar">
+
+        <div class="container">
+
+            <h1 class="nav-title">雙北眷村介紹網頁</h1>
+
+            <div class="nav-menu">
+
+                <input type="checkbox" id="menu-control">
+
+                <label for="menu-control" class="hb-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+
+                <ul class="nav-list">
+                    <li><a href="index.html">首頁</a></li>
+                    <li><a href="heart village.html">北投中心新村</a></li>
+                    <li><a href="home village.html">嘉禾新村</a></li>
+                    <li><a href="four four south village.html">四四南村</a></li>
+                    <li><a href="artistvillage.html">寶藏巖國際藝術村</a></li>
+                    <li><a href="huanmin.html">蟾蜍山煥民新村</a></li>
+                    <li><a href="military village.html">空軍三重一村</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- content -->
+
+    <article>
+
+        <section>
+
+            <h2>嘉禾新村</h2>
+
+            <h3>資訊</h3>
+
+            <p>
+                地址：台北市中正區永春街131巷1號<br>
+                軍種：聯勤、陸軍<br>
+                年份：1940～1945年<br>
+                交通方式：捷運台電大樓站及公館站，步行約10分鐘即可抵達<br>
+                官網：
+                <a href="https://homevillage.taipei/" target="_blank">
+                    https://homevillage.taipei/
+                </a>
+            </p>
+
+            <!-- slider -->
+
+            <div class="slider">
+
+                <div class="slides fade">
+                    <img src="images/ho1.jpg" alt="嘉禾新村門口">
+                </div>
+
+                <div class="slides fade">
+                    <img src="images/ho2.jpg" alt="嘉禾故事館門口">
+                </div>
+
+                <div class="slides fade">
+                    <img src="images/ho3.jpg" alt="嘉禾故事館">
+                </div>
+
+                <div class="slides fade">
+                    <img src="images/ho4.jpg" alt="將軍巷">
+                </div>
+
+                <div class="slides fade">
+                    <img src="images/ho5.jpg" alt="ho5">
+                </div>
+
+                <div class="slides fade">
+                    <img src="images/ho6.jpg" alt="ho6">
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+
+                <p>(圖源:自攝)</p>
+
+            </div>
+
+        </section>
+
+        <section>
+
+            <h3>介紹</h3>
+
+            <p>
+                嘉禾新村最初是作為日軍的砲兵聯隊營房基地，國民政府來台後改建成聯勤通信修理廠，1950年代，隨著廠房遷至桃園，國防部便將原廠房轉為提供給廠房員工及軍人的眷舍。<br>
+                在這小小的眷村當中，曾經住過10位將軍，而張載宇將軍的故居，現已改建成「嘉禾故事館」。<br>
+                步入館內，映入眼簾的是清楚記錄眷村歷史的年表，清晰梳理了嘉禾新村的歷史脈絡，而後方的沙發區旁也設有不少居民往事的敘述，記錄著眷戶們的溫馨趣事，
+                沿著具年代感的樓梯而上，二樓則設有多元文化展演空間，讓老房子多了些豐富的色彩。
+            </p>
+
+        </section>
+
+        <section>
+
+            <h3>特色</h3>
+
+            <div class="feature-container">
+
+                <div class="feature-card">
+                    <img src="images/ho1'.png" alt="">
+                    <p>五月天《人生海海》MV取景地<br>圖源: 五月天歌曲MV</p>
+                </div>
+
+                <div class="feature-card">
+                    <img src="images/ho2'.jpg" alt="">
+                    <p>拼貼式加蓋建築<br>圖源:自攝</p>
+                </div>
+
+                <div class="feature-card">
+                    <img src="images/ho3'.jpg" alt="">
+                    <p>保留日式建築風格<br>圖源:自攝</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </article>
+
+    <!-- slider js -->
+
+    <script>
+
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n){
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n){
+
+            let slides = document.getElementsByClassName("slides");
+
+            if(n > slides.length){
+                slideIndex = 1;
+            }
+
+            if(n < 1){
+                slideIndex = slides.length;
+            }
+
+            for(let i = 0; i < slides.length; i++){
+                slides[i].style.display = "none";
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+        }
+
+        setInterval(() => {
+            plusSlides(1);
+        }, 4000);
+
+    </script>
+
+</body>
+
+</html>

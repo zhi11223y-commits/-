@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8">
+    <title>蟾蜍山煥民新村介紹頁</title>
+
+    <style>
+
+        body{
+            margin: 0;
+            background-color: #f5f1ea;
+            font-family: "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        /* navbar */
+
+        .navbar {
+            background-color: #863737;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-title {
+            color: white;
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        #menu-control {
+            display: none;
+        }
+
+        .hb-icon {
+            display: block;
+            width: 30px;
+            cursor: pointer;
+        }
+
+        .hb-icon span {
+            display: block;
+            height: 3px;
+            background-color: white;
+            margin: 6px 0;
+            transition: 0.3s;
+        }
+
+        .nav-list {
+            position: absolute;
+            top: 70px;
+            right: 5%;
+
+            background-color: white;
+            list-style: none;
+
+            padding: 10px 0;
+            width: 200px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+
+            display: none;
+        }
+
+        .nav-list li a {
+            display: block;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: 0.3s;
+        }
+
+        .nav-list li a:hover {
+            background-color: #f5f5f5;
+            color: #863737;
+        }
+
+        #menu-control:checked ~ .nav-list {
+            display: block;
+        }
+
+        #menu-control:checked ~ .hb-icon span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        #menu-control:checked ~ .hb-icon span:nth-child(2) {
+            opacity: 0;
+        }
+
+        #menu-control:checked ~ .hb-icon span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+        /* section */
+
+        section{
+            background-color: white;
+
+            width: 90%;
+            max-width: 1200px;
+
+            margin: 40px auto;
+            padding: 35px;
+
+            border-radius: 20px;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        h2{
+            color: #863737;
+            font-size: 2rem;
+
+            border-left: 8px solid #863737;
+            padding-left: 15px;
+        }
+
+        h3{
+            color: #863737;
+        }
+
+        /* slider */
+
+        .slider{
+            position: relative;
+            max-width: 900px;
+            margin: 30px auto;
+        }
+
+        .slides{
+            display: none;
+        }
+
+        .slides img{
+            width: 100%;
+            height: 500px;
+
+            object-fit: cover;
+
+            border-radius: 20px;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .prev,
+        .next{
+            cursor: pointer;
+
+            position: absolute;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            padding: 16px;
+
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+
+            background-color: rgba(0,0,0,0.4);
+
+            border-radius: 50%;
+
+            user-select: none;
+        }
+
+        .prev{
+            left: 20px;
+        }
+
+        .next{
+            right: 20px;
+        }
+
+        .prev:hover,
+        .next:hover{
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .fade{
+            animation: fade 0.8s;
+        }
+
+        @keyframes fade{
+            from{opacity:0.4}
+            to{opacity:1}
+        }
+
+        /* feature */
+
+        .feature-container{
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .feature-card{
+            flex: 1;
+            min-width: 250px;
+
+            background-color: #f8f4ee;
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .feature-card img{
+            width: 100%;
+            height: 220px;
+
+            object-fit: cover;
+        }
+
+        .feature-card p{
+            padding: 15px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- navbar -->
+
+    <header class="navbar">
+
+        <div class="container">
+
+            <h1 class="nav-title">雙北眷村介紹網頁</h1>
+
+            <div class="nav-menu">
+
+                <input type="checkbox" id="menu-control">
+
+                <label for="menu-control" class="hb-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+
+                <ul class="nav-list">
+                    <li><a href="index.html">首頁</a></li>
+                    <li><a href="heart village.html">北投中心新村</a></li>
+                    <li><a href="home village.html">嘉禾新村</a></li>
+                    <li><a href="four four south village.html">四四南村</a></li>
+                    <li><a href="artistvillage.html">寶藏巖國際藝術村</a></li>
+                    <li><a href="huanmin.html">蟾蜍山煥民新村</a></li>
+                    <li><a href="military village.html">空軍三重一村</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- content -->
+
+    <article>
+
+        <section>
+
+            <h2>蟾蜍山煥民新村</h2>
+
+            <h3>資訊</h3>
+
+            <p>
+                地址：台北市大安區羅斯福路四段 119 巷 66 弄 12 號<br>
+                軍種：空軍<br>
+                年份：1953年<br>
+                交通方式：捷運公館站2號出口步行約18分鐘即可抵達<br>
+                官網：
+                <a href="https://huanminvillage.taipei/" target="_blank">
+                    https://huanminvillage.taipei/
+                </a>
+            </p>
+
+            <!-- slider -->
+
+            <div class="slider">
+
+                <div class="slides fade">
+                    <img src="images/hu1.jpg" alt="hu1">
+                </div>
+
+                <div class="slides fade">
+                    <img src="images/hu2.jpg" alt="hu2">
+                </div>
+
+                <div class="slides fade">
+                    <img src="images/hu3.jpg" alt="hu3">
+                </div>
+
+                <div class="slides fade">
+                    <img src="images/hu4.jpg" alt="hu4">
+                </div>
+
+                <div class="slides fade">
+                    <img src="images/hu5.jpg" alt="hu5">
+                </div>
+
+                <div class="slides fade">
+                    <img src="images/hu6.jpg" alt="hu6">
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+
+                <p>(圖源:自攝)</p>
+
+            </div>
+
+        </section>
+
+        <section>
+
+            <h3>介紹</h3>
+
+            <p>
+                蟾蜍山煥民新村是臺北市少數被完整保留的空軍眷村。<br>
+                國民政府遷台後，因蟾蜍山地形與區位具戰略價值，在此設置空軍作戰司令部，周圍則有軍眷以及戰後移民共同營造所成的聚落，
+                因聚落沿山而建，因此形成獨特的階梯式建築，沿著蜿蜒的階梯而上，除了古樸的房子外，現今還有設立數件裝置藝術，形成舊時代與現代藝術的融合。<br>
+                現今仍有些許原住戶仍居住於此，參觀時也要注意不要擅闖居民私宅。
+            </p>
+
+        </section>
+
+        <section>
+
+            <h3>特色</h3>
+
+            <div class="feature-container">
+
+                <div class="feature-card">
+                    <img src="images/hu1'.jpg" alt="">
+                    <p>階梯式建築<br>圖源:自攝</p>
+                </div>
+
+                <div class="feature-card">
+                    <img src="images/hu2'.jpg" alt="">
+                    <p>自力營造加蓋<br>圖源:自攝</p>
+                </div>
+
+                <div class="feature-card">
+                    <img src="images/hu3'.jpg" alt="">
+                    <p>裝置藝術<br>圖源:自攝</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </article>
+
+    <!-- slider js -->
+
+    <script>
+
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n){
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n){
+
+            let slides = document.getElementsByClassName("slides");
+
+            if(n > slides.length){
+                slideIndex = 1;
+            }
+
+            if(n < 1){
+                slideIndex = slides.length;
+            }
+
+            for(let i = 0; i < slides.length; i++){
+                slides[i].style.display = "none";
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+        }
+
+        setInterval(() => {
+            plusSlides(1);
+        }, 4000);
+
+    </script>
+
+</body>
+
+</html>

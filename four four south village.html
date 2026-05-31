@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8">
+    <title>四四南村介紹頁</title>
+
+    <style>
+
+        body{
+            margin: 0;
+            background-color: #f5f1ea;
+            font-family: "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        /* navbar */
+
+        .navbar {
+            background-color: #863737;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-title {
+            color: white;
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        #menu-control {
+            display: none;
+        }
+
+        .hb-icon {
+            display: block;
+            width: 30px;
+            cursor: pointer;
+        }
+
+        .hb-icon span {
+            display: block;
+            height: 3px;
+            background-color: white;
+            margin: 6px 0;
+            transition: 0.3s;
+        }
+
+        .nav-list {
+            position: absolute;
+            top: 70px;
+            right: 5%;
+
+            background-color: white;
+            list-style: none;
+
+            padding: 10px 0;
+            width: 200px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+
+            display: none;
+        }
+
+        .nav-list li a {
+            display: block;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: 0.3s;
+        }
+
+        .nav-list li a:hover {
+            background-color: #f5f5f5;
+            color: #863737;
+        }
+
+        #menu-control:checked ~ .nav-list {
+            display: block;
+        }
+
+        #menu-control:checked ~ .hb-icon span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        #menu-control:checked ~ .hb-icon span:nth-child(2) {
+            opacity: 0;
+        }
+
+        #menu-control:checked ~ .hb-icon span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+        /* section */
+
+        section{
+            background-color: white;
+
+            width: 90%;
+            max-width: 1200px;
+
+            margin: 40px auto;
+            padding: 35px;
+
+            border-radius: 20px;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        h2{
+            color: #863737;
+            font-size: 2rem;
+
+            border-left: 8px solid #863737;
+            padding-left: 15px;
+        }
+
+        h3{
+            color: #863737;
+        }
+
+        /* slider */
+
+        .slider{
+            position: relative;
+            max-width: 900px;
+            margin: 30px auto;
+        }
+
+        .slides{
+            display: none;
+        }
+
+        .slides img{
+            width: 100%;
+            height: 500px;
+
+            object-fit: cover;
+
+            border-radius: 20px;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .prev,
+        .next{
+            cursor: pointer;
+
+            position: absolute;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            padding: 16px;
+
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+
+            background-color: rgba(0,0,0,0.4);
+
+            border-radius: 50%;
+
+            user-select: none;
+        }
+
+        .prev{
+            left: 20px;
+        }
+
+        .next{
+            right: 20px;
+        }
+
+        .prev:hover,
+        .next:hover{
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .fade{
+            animation: fade 0.8s;
+        }
+
+        @keyframes fade{
+            from{opacity:0.4}
+            to{opacity:1}
+        }
+
+        /* feature */
+
+        .feature-container{
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .feature-card{
+            flex: 1;
+            min-width: 250px;
+
+            background-color: #f8f4ee;
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .feature-card img{
+            width: 100%;
+            height: 220px;
+
+            object-fit: cover;
+        }
+
+        .feature-card p{
+            padding: 15px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- navbar -->
+
+    <header class="navbar">
+
+        <div class="container">
+
+            <h1 class="nav-title">雙北眷村介紹網頁</h1>
+
+            <div class="nav-menu">
+
+                <input type="checkbox" id="menu-control">
+
+                <label for="menu-control" class="hb-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+
+                <ul class="nav-list">
+                    <li><a href="index.html">首頁</a></li>
+                    <li><a href="heart village.html">北投中心新村</a></li>
+                    <li><a href="home village.html">嘉禾新村</a></li>
+                    <li><a href="four four south village.html">四四南村</a></li>
+                    <li><a href="artistvillage.html">寶藏巖國際藝術村</a></li>
+                    <li><a href="huanmin.html">蟾蜍山煥民新村</a></li>
+                    <li><a href="military village.html">空軍三重一村</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- content -->
+
+    <article>
+
+        <section>
+
+            <h2>四四南村</h2>
+
+            <h3>資訊</h3>
+
+            <p>
+                地址：臺北市信義區松勤街52號<br>
+                聯勤第四十四兵工廠的廠工 <br>
+                年份：1948年<br>
+                交通方式：捷運台北101/世貿站步行約4分鐘即可抵達<br>
+            </p>
+
+            <!-- slider -->
+
+            <div class="slider">
+
+                <div class="slides fade">
+                    <img src="images/ff1.jpg" alt="ff1">
+                </div>
+
+                <div class="slides fade">
+                    <img src="images/ff2.jpg" alt="ff2">
+                </div>
+
+                <div class="slides fade">
+                    <img src="images/ff3.jpg" alt="ff3">
+                </div>
+
+                <div class="slides fade">
+                    <img src="images/ff4.jpg" alt="ff4">
+                </div>
+
+                <div class="slides fade">
+                    <img src="images/ff5.jpg" alt="ff5">
+                </div>
+
+                <div class="slides fade">
+                    <img src="images/ff6.jpg" alt="ff6">
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+
+                <p>(圖源:自攝)</p>
+
+            </div>
+
+        </section>
+
+        <section>
+
+            <h3>介紹</h3>
+
+            <p>
+                在台北101旁，與周圍高樓形成鮮明對比的是北部地區第一個眷村--四四南村。<br>
+                最初是作為聯勤第四十四兵工廠的廠工宿舍，因位於四十四兵工廠之南，固得其稱。<br>
+                現今雖然大部分四四南村建築已被拆除，留存下來的建築轉為信義公民會館。其中一間做為「眷村文物館」，當中紀錄四四南村的歷史軌跡及文物等，讓民眾可以更加瞭解眷村文化。<br>
+                且在假日會有文創市集擺攤，周圍公園也很適合散步，是個假日休閒的好去處。
+            </p>
+
+        </section>
+
+        <section>
+
+            <h3>特色</h3>
+
+            <div class="feature-container">
+
+                <div class="feature-card">
+                    <img src="images/ff1'.jpg" alt="">
+                    <p>101對面:現代都市與舊日眷村<br>圖源:自攝</p>
+                </div>
+
+                <div class="feature-card">
+                    <img src="images/ff3'.jpg" alt="">
+                    <p>防空洞舖上草皮<br>圖源:自攝</p>
+                </div>
+
+                <div class="feature-card">
+                    <img src="images/ff2'.jpg" alt="">
+                    <p>假日有文創市集<br>圖源:自攝</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </article>
+
+    <!-- slider js -->
+
+    <script>
+
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n){
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n){
+
+            let slides = document.getElementsByClassName("slides");
+
+            if(n > slides.length){
+                slideIndex = 1;
+            }
+
+            if(n < 1){
+                slideIndex = slides.length;
+            }
+
+            for(let i = 0; i < slides.length; i++){
+                slides[i].style.display = "none";
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+        }
+
+        setInterval(() => {
+            plusSlides(1);
+        }, 4000);
+
+    </script>
+
+</body>
+
+</html>

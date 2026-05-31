@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8">
+    <title>寶藏巖國際藝術村介紹頁</title>
+
+    <style>
+
+        body{
+            margin: 0;
+            background-color: #f5f1ea;
+            font-family: "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        /* navbar */
+
+        .navbar {
+            background-color: #863737;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-title {
+            color: white;
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        #menu-control {
+            display: none;
+        }
+
+        .hb-icon {
+            display: block;
+            width: 30px;
+            cursor: pointer;
+        }
+
+        .hb-icon span {
+            display: block;
+            height: 3px;
+            background-color: white;
+            margin: 6px 0;
+            transition: 0.3s;
+        }
+
+        .nav-list {
+            position: absolute;
+            top: 70px;
+            right: 5%;
+
+            background-color: white;
+            list-style: none;
+
+            padding: 10px 0;
+            width: 200px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+
+            display: none;
+        }
+
+        .nav-list li a {
+            display: block;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: 0.3s;
+        }
+
+        .nav-list li a:hover {
+            background-color: #f5f5f5;
+            color: #863737;
+        }
+
+        #menu-control:checked ~ .nav-list {
+            display: block;
+        }
+
+        #menu-control:checked ~ .hb-icon span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        #menu-control:checked ~ .hb-icon span:nth-child(2) {
+            opacity: 0;
+        }
+
+        #menu-control:checked ~ .hb-icon span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+        /* section */
+
+        section{
+            background-color: white;
+
+            width: 90%;
+            max-width: 1200px;
+
+            margin: 40px auto;
+            padding: 35px;
+
+            border-radius: 20px;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        h2{
+            color: #863737;
+            font-size: 2rem;
+
+            border-left: 8px solid #863737;
+            padding-left: 15px;
+        }
+
+        h3{
+            color: #863737;
+        }
+
+        /* slider */
+
+        .slider{
+            position: relative;
+            max-width: 900px;
+            margin: 30px auto;
+        }
+
+        .slides{
+            display: none;
+        }
+
+        .slides img{
+            width: 100%;
+            height: 500px;
+
+            object-fit: cover;
+
+            border-radius: 20px;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .prev,
+        .next{
+            cursor: pointer;
+
+            position: absolute;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            padding: 16px;
+
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+
+            background-color: rgba(0,0,0,0.4);
+
+            border-radius: 50%;
+
+            user-select: none;
+        }
+
+        .prev{
+            left: 20px;
+        }
+
+        .next{
+            right: 20px;
+        }
+
+        .prev:hover,
+        .next:hover{
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .fade{
+            animation: fade 0.8s;
+        }
+
+        @keyframes fade{
+            from{opacity:0.4}
+            to{opacity:1}
+        }
+
+        /* feature */
+
+        .feature-container{
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .feature-card{
+            flex: 1;
+            min-width: 250px;
+
+            background-color: #f8f4ee;
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .feature-card img{
+            width: 100%;
+            height: 220px;
+
+            object-fit: cover;
+        }
+
+        .feature-card p{
+            padding: 15px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- navbar -->
+
+    <header class="navbar">
+
+        <div class="container">
+
+            <h1 class="nav-title">雙北眷村介紹網頁</h1>
+
+            <div class="nav-menu">
+
+                <input type="checkbox" id="menu-control">
+
+                <label for="menu-control" class="hb-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+
+                <ul class="nav-list">
+                    <li><a href="index.html">首頁</a></li>
+                    <li><a href="heart village.html">北投中心新村</a></li>
+                    <li><a href="home village.html">嘉禾新村</a></li>
+                    <li><a href="four four south village.html">四四南村</a></li>
+                    <li><a href="artistvillage.html">寶藏巖國際藝術村</a></li>
+                    <li><a href="huanmin.html">蟾蜍山煥民新村</a></li>
+                    <li><a href="military village.html">空軍三重一村</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- content -->
+
+    <article>
+
+        <section>
+
+            <h2>寶藏巖國際藝術村</h2>
+
+            <h3>資訊</h3>
+
+            <p>
+                地址：臺北市中正區汀州路三段230巷14弄2號<br>
+                非官方建造，各地移民所建之聚落<br>
+                年份：約1960年代<br>
+                交通方式：捷運公館站步行約12分鐘即可抵達<br>
+                官網：
+                <a href="https://www.artistvillage.org/" target="_blank">
+                    https://www.artistvillage.org/
+                </a>
+            </p>
+
+            <!-- slider -->
+
+            <div class="slider">
+
+                <div class="slides fade">
+                    <img src="images/ar1.jpg" alt="he1">
+                </div>
+
+                <div class="slides fade">
+                    <img src="images/ar2.jpg" alt="he2">
+                </div>
+
+                <div class="slides fade">
+                    <img src="images/ar3.jpg" alt="he3">
+                </div>
+
+                <div class="slides fade">
+                    <img src="images/ar4.jpg" alt="he4">
+                </div>
+
+                <div class="slides fade">
+                    <img src="images/ar5.jpg" alt="he5">
+                </div>
+
+                <div class="slides fade">
+                    <img src="images/ar6.jpg" alt="he6">
+                </div>
+
+                
+                <div class="slides fade">
+                    <img src="images/ar7.jpg" alt="he6">
+                </div>
+
+                
+                <div class="slides fade">
+                    <img src="images/ar8.jpg" alt="he6">
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+
+                <p>(圖源:自攝)</p>
+
+            </div>
+
+        </section>
+
+        <section>
+
+            <h3>介紹</h3>
+
+            <p>
+                熱鬧的公館商圈旁，在小觀音山南側與新店溪河岸間有一座充滿藝術氣息的小聚落，此聚落原為70年代左右，由戰後榮民、城鄉移民與都市原住民等自力造屋而成的違章建築群，後來政策改變後曾面臨拆遷危機，現今已轉型為國際藝術村。<br>
+                老舊的房舍、蜿蜒的小巷，與藝術氣息和諧共生，為寶藏巖聚落注入新的生命力。<br>
+                現今仍有部分住戶居住在聚落中，所以參訪時請尊重隱私，勿闖入居民私宅當中。
+
+            </p>
+
+        </section>
+
+        <section>
+
+            <h3>特色</h3>
+
+            <div class="feature-container">
+
+                <div class="feature-card">
+                    <img src="images/ar1'.jpg" alt="">
+                    <p>蜿蜒巷弄<br>圖源:自攝</p>
+                </div>
+
+                <div class="feature-card">
+                    <img src="images/ar2'.jpg" alt="">
+                    <p>國際藝術村<br>圖源:自攝</p>
+                </div>
+
+                <div class="feature-card">
+                    <img src="images/ar3'.jpg" alt="">
+                    <p>歷史斷面<br>圖源:自攝</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </article>
+
+    <!-- slider js -->
+
+    <script>
+
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n){
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n){
+
+            let slides = document.getElementsByClassName("slides");
+
+            if(n > slides.length){
+                slideIndex = 1;
+            }
+
+            if(n < 1){
+                slideIndex = slides.length;
+            }
+
+            for(let i = 0; i < slides.length; i++){
+                slides[i].style.display = "none";
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+        }
+
+        setInterval(() => {
+            plusSlides(1);
+        }, 4000);
+
+    </script>
+
+</body>
+
+</html>

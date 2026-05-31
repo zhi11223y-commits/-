@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8">
+    <title>雙北眷村介紹網頁</title>
+    
+    <style>
+        
+.navbar {
+    background-color: #863737;
+    border-bottom: 2px solid #863737; 
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.nav-title {
+    color: #ffffff; 
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+#menu-control {
+    display: none;
+}
+
+.hb-icon {
+    display: block;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001;
+}
+
+.hb-icon span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff; 
+    margin-bottom: 5px;
+    transition: 0.3s;
+}
+
+.nav-list {
+    position: absolute;
+    top: 60px;
+    right: 5%;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 10px 0;
+    width: 180px;
+    border-radius: 8px;
+    display: none;
+}
+
+.nav-list li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    transition: 0.3s;
+}
+
+.nav-list li a:hover {
+    background-color: #f5f5f5;
+    color: #a52a2a;
+}
+
+#menu-control:checked ~ .nav-list {
+    display: block;
+}
+
+#menu-control:checked ~ .hb-icon span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+#menu-control:checked ~ .hb-icon span:nth-child(2) { opacity: 0; }
+#menu-control:checked ~ .hb-icon span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    </style>
+</head>
+<body>
+    <style>body{
+    margin: 0;
+    font-family: "Noto Sans TC", sans-serif;
+    background-color: #f5f1ea;
+    color: #333;
+    line-height: 1.8;
+}
+    </style>
+    <header class="navbar">
+    <div class="container">
+        <h1 class="nav-title">雙北眷村介紹網頁</h1>
+
+        <div class="nav-menu">
+            <input type="checkbox" id="menu-control">
+            
+            <label for="menu-control" class="hb-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <ul class="nav-list">
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="heart village.html">北投中心新村</a></li>
+                <li><a href="home village.html">嘉禾新村</a></li>
+                <li><a href="four four south village.html">四四南村</a></li>
+                <li><a href="artistvillage.html">寶藏巖國際藝術村</a></li>
+                <li><a href="huanmin.html">蟾蜍山煥民新村</a></li>
+                <li><a href="military village.html">空軍三重一村</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+    </div>
+</header>
+    <article>
+        <hgroup>
+        <section class="hero">
+            <h1>走進雙北眷村</h1>
+            <p>探索歷史、文化與生活記憶</p>
+            <style>.hero{
+    background-image: url("images/ho6.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    color: white;
+    text-align: center;
+}</style>
+        </section>
+        <section>
+            <h2>眷村簡介</h2>
+            <p>
+                1940年代末期，政府為安置戰後來台的國軍及其家屬，設立了許多宿舍供移民居住，久而久之也形成了一個小村落。<br/>
+                眷村多分布於台北、高雄等地，雖大多都已拆除，但仍有部分眷村留存下來作為歷史建築供民眾參觀。<br/>
+                漫步在古蹟中，聆聽著老建築述說這片土地曾發生過的種種往事。<br>在這不大卻溫馨的眷村之中，大家雖來自大江南北，但因共同落腳於同一土地，居民逐漸熟絡，往來頻繁，<br>彼此間也產生了深厚的情感與鄰里情誼，建構出獨特的眷村文化生活圈。
+            </p>
+            <style>section{
+    background-color: #ffffff;
+    padding: 30px;
+    margin: 40px auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    width: 90%;
+    max-width: 1200px;
+}</style>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>位置導覽</h2>
+           <style> h2{
+    font-size: 2rem;
+    color: #863737;
+    border-left: 8px solid #863737;
+    padding-left: 15px;
+    margin-bottom: 20px;
+}</style>
+           <img src="map3.PNG" alt="眷村分佈地圖" width="1100" usemap="#village-map">
+
+           <map name="village-map">
+               <area shape="rect" coords="313,32,602,282" href="heart village.html" alt="北投中心新村">
+               <area shape="rect" coords="240,663,555,799" href="home village.html" alt="嘉禾新村">
+               <area shape="rect" coords="654,575,1137,809" href="four four south village.html" alt="四四南村">
+               <area shape="rect" coords="260,885,609,1101" href="artistvillage.html" alt="寶藏巖國際藝術村">
+               <area shape="rect" coords="162,300,335,568" href="military village.html" alt="空軍三重一村">
+               <area shape="rect" coords="643,837,1045,1051" href="huanmin.html" alt="蟾蜍山煥民新村">
+            </map>
+
+            <p><small>※ 本圖位置僅供參考，不代表實際精確位置。</small></p>
+        </section>
+    </article>
+    <footer>
+        <p><small>本網頁內容為學生自主學習作品，非營利使用。<br/>
+            內容如有侵權，請來信告知，將立即撤除。<br/>
+            資訊雖經查證，但不保證其絕對準確性，相關資訊以官方公告為準<br/>
+            聯絡信箱:<a herf = " mailto:y49811553@gmail.com">y49811553@gmail.com</small></p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
+
+<script>
+    imageMapResize();
+</script>
+</body>
+</html>

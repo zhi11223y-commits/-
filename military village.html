@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8">
+    <title>三重一村介紹頁</title>
+
+    <style>
+
+        body{
+            margin: 0;
+            background-color: #f5f1ea;
+            font-family: "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        /* navbar */
+
+        .navbar {
+            background-color: #863737;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-title {
+            color: white;
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        #menu-control {
+            display: none;
+        }
+
+        .hb-icon {
+            display: block;
+            width: 30px;
+            cursor: pointer;
+        }
+
+        .hb-icon span {
+            display: block;
+            height: 3px;
+            background-color: white;
+            margin: 6px 0;
+            transition: 0.3s;
+        }
+
+        .nav-list {
+            position: absolute;
+            top: 70px;
+            right: 5%;
+
+            background-color: white;
+            list-style: none;
+
+            padding: 10px 0;
+            width: 200px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+
+            display: none;
+        }
+
+        .nav-list li a {
+            display: block;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: 0.3s;
+        }
+
+        .nav-list li a:hover {
+            background-color: #f5f5f5;
+            color: #863737;
+        }
+
+        #menu-control:checked ~ .nav-list {
+            display: block;
+        }
+
+        #menu-control:checked ~ .hb-icon span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        #menu-control:checked ~ .hb-icon span:nth-child(2) {
+            opacity: 0;
+        }
+
+        #menu-control:checked ~ .hb-icon span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+        /* section */
+
+        section{
+            background-color: white;
+
+            width: 90%;
+            max-width: 1200px;
+
+            margin: 40px auto;
+            padding: 35px;
+
+            border-radius: 20px;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        h2{
+            color: #863737;
+            font-size: 2rem;
+
+            border-left: 8px solid #863737;
+            padding-left: 15px;
+        }
+
+        h3{
+            color: #863737;
+        }
+
+        /* slider */
+
+        .slider{
+            position: relative;
+            max-width: 900px;
+            margin: 30px auto;
+        }
+
+        .slides{
+            display: none;
+        }
+
+        .slides img{
+            width: 100%;
+            height: 500px;
+
+            object-fit: cover;
+
+            border-radius: 20px;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .prev,
+        .next{
+            cursor: pointer;
+
+            position: absolute;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            padding: 16px;
+
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+
+            background-color: rgba(0,0,0,0.4);
+
+            border-radius: 50%;
+
+            user-select: none;
+        }
+
+        .prev{
+            left: 20px;
+        }
+
+        .next{
+            right: 20px;
+        }
+
+        .prev:hover,
+        .next:hover{
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .fade{
+            animation: fade 0.8s;
+        }
+
+        @keyframes fade{
+            from{opacity:0.4}
+            to{opacity:1}
+        }
+
+        /* feature */
+
+        .feature-container{
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .feature-card{
+            flex: 1;
+            min-width: 250px;
+
+            background-color: #f8f4ee;
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .feature-card img{
+            width: 100%;
+            height: 220px;
+
+            object-fit: cover;
+        }
+
+        .feature-card p{
+            padding: 15px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- navbar -->
+
+    <header class="navbar">
+
+        <div class="container">
+
+            <h1 class="nav-title">雙北眷村介紹網頁</h1>
+
+            <div class="nav-menu">
+
+                <input type="checkbox" id="menu-control">
+
+                <label for="menu-control" class="hb-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+
+                <ul class="nav-list">
+                    <li><a href="index.html">首頁</a></li>
+                    <li><a href="heart village.html">北投中心新村</a></li>
+                    <li><a href="home village.html">嘉禾新村</a></li>
+                    <li><a href="four four south village.html">四四南村</a></li>
+                    <li><a href="artistvillage.html">寶藏巖國際藝術村</a></li>
+                    <li><a href="huanmin.html">蟾蜍山煥民新村</a></li>
+                    <li><a href="military village.html">空軍三重一村</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- content -->
+
+    <article>
+
+        <section>
+
+            <h2>三重一村</h2>
+
+            <h3>資訊</h3>
+
+            <p>
+                地址：新北市三重區正義南路86巷9號<br>
+                軍種: 空軍<br>
+                年份: 1954年 <br>
+                交通方式：捷運台北橋站步行約9分鐘即可抵達<br>
+                官網：
+                <a href=" https://www.facebook.com/militaryavillage/?locale=zh_TW" target="_blank">
+                     https://www.facebook.com/militaryavillage/?locale=zh_TW
+                </a>
+            </p>
+
+            <!-- slider -->
+
+            <div class="slider">
+
+                <div class="slides fade">
+                    <img src="images/mi1.jpg" alt="mi1">
+                </div>
+
+                <div class="slides fade">
+                    <img src="images/mi2.jpg" alt="mi2">
+                </div>
+
+                <div class="slides fade">
+                    <img src="images/mi3.jpg" alt="mi3">
+                </div>
+
+                <div class="slides fade">
+                    <img src="images/mi4.jpg" alt="mi4">
+                </div>
+
+                <div class="slides fade">
+                    <img src="images/mi5.jpg" alt="mi5">
+                </div>
+
+                <div class="slides fade">
+                    <img src="images/mi6.jpg" alt="mi6">
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+
+                <p>(圖源:自攝)</p>
+
+            </div>
+
+        </section>
+
+        <section>
+
+            <h3>介紹</h3>
+
+            <p>
+                三重一村為北部地區僅存的防砲眷村，前身分別為日軍高砲陣地以及中華民國空軍高砲部隊駐地，因此保留了戰爭時期留下的防砲陣地及地下甬道遺跡。
+                但因緊鄰淡水河畔外加防洪建設不足，在早期常因颱風等天災而造成毀損。<br>
+                現今已經改建成新北市眷村文化園區，讓遊客能經過實際踏訪，了解其曾經的歷史以及居民生活樣貌，園區內也會舉辦市集與文化教育活動，讓眷村更加活化。
+            </p>
+
+        </section>
+
+        <section>
+
+            <h3>特色</h3>
+
+            <div class="feature-container">
+
+                <div class="feature-card">
+                    <img src="images/mi1'.jpg" alt="">
+                    <p>防洪樓<br>圖源:自攝</p>
+                </div>
+
+                <div class="feature-card">
+                    <img src="images/mi2'.jpg" alt="">
+                    <p>《一把青》、《國際橋牌社》等熱門戲劇的經典取景地。<br>圖源:</p>
+                </div>
+
+                <div class="feature-card">
+                    <img src="images/mi3'.jpg" alt="">
+                    <p>地下甬道遺跡 <br>圖源:自攝</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </article>
+
+    <!-- slider js -->
+
+    <script>
+
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n){
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n){
+
+            let slides = document.getElementsByClassName("slides");
+
+            if(n > slides.length){
+                slideIndex = 1;
+            }
+
+            if(n < 1){
+                slideIndex = slides.length;
+            }
+
+            for(let i = 0; i < slides.length; i++){
+                slides[i].style.display = "none";
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+        }
+
+        setInterval(() => {
+            plusSlides(1);
+        }, 4000);
+
+    </script>
+
+</body>
+
+</html>
